@@ -14,7 +14,7 @@ const config = {
   tagline: 'Bitcoin Developer Guide',
   favicon: 'img/favicon.ico',
   url: 'https://sharmaz.github.io',
-  baseUrl: '/',
+  baseUrl: '/btc-dev-journey/',
   organizationName: 'Sharmaz',
   projectName: 'btc-dev-journey',
   trailingSlash: false,

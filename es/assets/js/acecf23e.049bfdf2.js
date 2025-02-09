@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbtc_dev_journey=self.webpackChunkbtc_dev_journey||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/btc-dev-journey/es/blog","blogTitle":"Blog","authorsListPath":"/btc-dev-journey/es/blog/authors"}')}}]);

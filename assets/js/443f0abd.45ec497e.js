@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbtc_dev_journey=self.webpackChunkbtc_dev_journey||[]).push([[2011],{5180:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/btc-dev-journey/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

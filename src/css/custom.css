@@ -4,27 +4,38 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fira Code', monospace;
+}
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #2a9409;
+  --ifm-color-primary-dark: #268508;
+  --ifm-color-primary-darker: #247e08;
+  --ifm-color-primary-darkest: #1d6806;
+  --ifm-color-primary-light: #2ea30a;
+  --ifm-color-primary-lighter: #30aa0a;
+  --ifm-color-primary-lightest: #37c00c;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #3be308;
+  --ifm-color-primary-dark: #35cc07;
+  --ifm-color-primary-darker: #32c107;
+  --ifm-color-primary-darkest: #299f06;
+  --ifm-color-primary-light: #43f60c;
+  --ifm-color-primary-lighter: #4bf717;
+  --ifm-color-primary-lightest: #66f839;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+

@@ -39,6 +39,37 @@ const config = {
     },
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/btc-dev-journey.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -68,7 +99,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/btc-dev-journey-social-card.png',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -78,7 +109,7 @@ const config = {
         title: 'BTC Dev Journey',
         logo: {
           alt: 'BTC Dev Journey Logo',
-          src: 'img/logo.svg',
+          src: 'img/btc-dev-journey-logo.svg',
         },
         items: [
           {

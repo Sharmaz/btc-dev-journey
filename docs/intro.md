@@ -2,46 +2,16 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+First of all, I must confess that I am starting out in this world of developing applications for **Bitcoin** and **Lightning Network**.
 
-## Getting Started
+The reason why this project exists is because I had setbacks from the initial setup, because the official documentation is a bit confusing, complex and in some parts outdated.
 
-Get started by **creating a new site**.
+Here I will add several guides, tutorials and more information regarding the development of applications on Bitcoin and Lightning Network. These resources will be available in **English** and **Spanish**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+To be able to follow these guides without problems you must have some experience as a developer.
 
-### What you'll need
+However, this does not mean that you will not achieve success by following these guides, you can support yourself with tools such as Chat GPT, search engines or by asking in forums such as reddit/stackoverflow or similar.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+If you want to contribute to this project, you can do so in the GitHub repository [https://github.com/Sharmaz/btc-dev-journey](https://github.com/Sharmaz/btc-dev-journey).

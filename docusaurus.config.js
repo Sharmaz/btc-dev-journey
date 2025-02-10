@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BTC Dev Journey',
-  tagline: 'Bitcoin Developer Guide',
+  tagline: 'Bitcoin & Lightning Network Development Guides',
   favicon: 'img/favicon.ico',
   url: 'https://sharmaz.github.io',
   baseUrl: '/btc-dev-journey/',
@@ -78,16 +78,6 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -116,9 +106,8 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Guides',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/Sharmaz/btc-dev-journey',
             label: 'GitHub',
@@ -134,10 +123,10 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Guides',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Guides',
                 to: '/docs/intro',
               },
             ],

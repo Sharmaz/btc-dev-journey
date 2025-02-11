@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbtc_dev_journey=self.webpackChunkbtc_dev_journey||[]).push([[7723],{7723:(e,c,r)=>{r.d(c,{createPieServices:()=>s.f});var s=r(8685);r(9369)}}]);

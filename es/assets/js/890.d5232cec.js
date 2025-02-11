@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbtc_dev_journey=self.webpackChunkbtc_dev_journey||[]).push([[890],{890:(e,c,r)=>{r.d(c,{createInfoServices:()=>s.v});var s=r(7021);r(9369)}}]);

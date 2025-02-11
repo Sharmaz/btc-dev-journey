@@ -21,6 +21,12 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -88,8 +94,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/btc-dev-journey-social-card.png',
+      mermaid: {
+        theme: {
+          light: 'neutral',
+          dark: 'dark',
+        },
+      },
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -104,7 +115,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'guideSidebar',
             position: 'left',
             label: 'Guides',
           },

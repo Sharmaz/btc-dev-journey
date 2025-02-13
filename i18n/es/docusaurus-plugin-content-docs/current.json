@@ -3,24 +3,12 @@
     "message": "Siguiente",
     "description": "The label for version current"
   },
-  "sidebar.guideSidebar.category.Tutorial - Basics": {
-    "message": "Tutorial - Basics",
-    "description": "The label for category Tutorial - Basics in sidebar guideSidebar"
-  },
-  "sidebar.guideSidebar.category.Tutorial - Basics.link.generated-index.description": {
-    "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category Tutorial - Basics in sidebar guideSidebar"
-  },
-  "sidebar.guideSidebar.category.Tutorial - Extras": {
-    "message": "Tutorial - Extras",
-    "description": "The label for category Tutorial - Extras in sidebar guideSidebar"
-  },
-  "sidebar.guideSidebar.category.Getting Started": {
+  "sidebar.guideSidebar.category.Getting started": {
     "message": "Comenzando",
-    "description": "The label for category Getting Started in sidebar guideSidebar"
+    "description": "The label for category Getting started in sidebar guideSidebar"
   },
-  "sidebar.guideSidebar.category.Getting Started.link.generated-index.description": {
-    "message": "Guias para iniciar a desarrollar aplicaciones para Bitcoin y Lightning Network.",
-    "description": "The generated-index page description for category Getting Started in sidebar guideSidebar"
+  "sidebar.guideSidebar.category.Getting started.link.generated-index.description": {
+    "message": "Guias para iniciar a desarrollar aplicaciones para Bitcoin y Lightning Network",
+    "description": "The generated-index page description for category Getting started in sidebar guideSidebar"
   }
 }

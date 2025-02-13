@@ -11,3 +11,11 @@ The reason why this project exists is because I had setbacks from the initial se
 Here I will add several guides, tutorials and more information regarding the development of applications on Bitcoin and Lightning Network. These resources will be available in **English** and **Spanish**.
 
 If you want to contribute to this project, you can do so in the GitHub repository [https://github.com/Sharmaz/btc-dev-journey](https://github.com/Sharmaz/btc-dev-journey).
+
+### Before start
+
+To be able to follow these guides without problems you should have some experience as a developer.
+
+However, this does not mean that you will not achieve success by following these guides, you can support yourself with tools such as Chat GPT, search engines or by asking in forums such as reddit/stackoverflow or similar.
+
+So, good luck and have fun!!

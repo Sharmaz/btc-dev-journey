@@ -11,10 +11,10 @@ sidebar_position: 1
 - Domino en algún lenguaje de programación ([Python](https://roadmap.sh/python), [Javascript](https://roadmap.sh/javascript), [Rust](https://roadmap.sh/rust), [Go](https://roadmap.sh/golang), [Java](https://roadmap.sh/java), etc.)
 
 :::tip
-Aunque no tengas al 100% las habilidades mencionadas, te animo a intentar completar las guias y tutoriales. 
+Aunque no tengas al 100% las habilidades mencionadas, te animo a intentar completar las guías y tutoriales.
 :::
 
-### Requerimientos minimos de hardware:
+### Requerimientos mínimos de hardware:
 
 - Sistema operativo: Linux or MacOS
 - RAM: 4GB

@@ -7,7 +7,7 @@ sidebar_position: 2
 Para desarrollar aplicaciones de Bitcoin y Lightning Network es necesario tener un entorno de desarrollo que permita conectarnos al core de bitcoin o la lightning network y utilizar su "API" que nos aportará funciones para acceder a los datos de la blockchain y realizar otras operaciones.
 
 :::note
-Esta explicacion es simplista, con forme nos adentremos al desarrollo en BTC veremos que es un poco más complejo.
+Esta explicación es simplista; conforme nos adentremos al desarrollo en BTC veremos que es un poco más complejo.
 :::
 
 ### BTC Apps

@@ -24,10 +24,10 @@ pip3 install --user poetry
 
 ### Instalación de Bitcoin Core
 
-Para instalar `Bitcoin Core` lo mas sencillo es usando snap.
+Para instalar `Bitcoin Core` lo más sencillo es usando snap.
 
 :::info
-Tambien existe la opcion de compilar Bitcoin Core desde el código fuente.
+Tambien existe la opción de compilar Bitcoin Core desde el código fuente.
 :::
 
 ```bash title="Bitcoin core"
@@ -43,7 +43,7 @@ En caso de que directamente vayas a desarrollar aplicaciones para Ligthning Netw
 
 ### Ejecución de Bitcoin para Desarrollo
 
-Vamos a abrir dos ventanas o tabs de terminal:
+Vamos a abrir dos ventanas o pestañas de terminal:
 
 - En la primera terminal ejecutamos `bitcoind` el cual va a correr el nodo de bitcoin y va sincronizar el blockchain que son mas de medio terabyte.
 
@@ -87,11 +87,11 @@ Toda petición realizada con `bitcoin-cli` nos responderá en formato JSON.
 Vamos a la terminal donde se esta corriendo `bitcoind` y cancelamos su ejecución con `ctrl + c`.
 
 :::warning
-Dejar corriendo `bitcoind` podria tardar muchas horas o incluso dias en sincronizar el todo el blockchain.
+Dejar corriendo `bitcoind` podria tardar muchas horas o incluso días en sincronizar el todo el blockchain.
 :::
 
 :::note
-Si en tu caso la aplicación que quieres desarrollar es solamente para Bitcoin, sin tocar la Lightning Network, puedes saltarte el resto de la guia. Y tus siguientes pasos seran terminar de sincronizar la blockchain con `bitcoind` y luego seguir usando `bitcoin-cli`.
+Si en tu caso la aplicación que quieres desarrollar es solamente para Bitcoin, sin tocar la Lightning Network, puedes saltarte el resto de la guía. Y tus siguientes pasos seran terminar de sincronizar la blockchain con `bitcoind` y luego seguir usando `bitcoin-cli`.
 :::
 
 ## Instalación de Lightning

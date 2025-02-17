@@ -10,5 +10,13 @@
   "sidebar.guideSidebar.category.Getting started.link.generated-index.description": {
     "message": "Guias para iniciar a desarrollar aplicaciones para Bitcoin y Lightning Network",
     "description": "The generated-index page description for category Getting started in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Environment setup": {
+    "message": "Configuración",
+    "description": "The label for category Environment setup in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Environment setup.link.generated-index.description": {
+    "message": "Vamos a configurar el entorno de desarrollo para MacOS y Ubuntu.",
+    "description": "The generated-index page description for category Environment setup in sidebar guideSidebar"
   }
 }

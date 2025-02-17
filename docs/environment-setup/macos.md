@@ -5,28 +5,28 @@ sidebar_position: 2
 
 ## Bitcoin Core
 
-### Dependencias
+### Dependencies
 
-Instalar dependencias `Python 3.12.3`, `Homebrew` y `Xcode`.
+Install dependencies `Python 3.12.3`, `Homebrew` and `Xcode`.
 :::warning
-Las versiones superiores de Python no me funcionaron. Me causaron errores mas adelante con Lightning Network.
+Python version above `3.12.3` did not work for me. I got errors later with Lightning Network.
 :::
 
-Otras dependencias: 
+Other dependencies:
 
 ```bash
 brew install autoconf automake libtool gnu-sed gettext libsodium protobuf
 export PATH="/usr/local/opt:$PATH"
 ```
 
-Instalamos poetry:
+Python dependencies:
 
 ```bash
 pip install --upgrade pip
 pip install poetry
 ```
 
-Si no tenemos SQLite hay que instalarlo:
+If you don't have SQLite you need to install it:
 
 ```bash
 brew install sqlite
@@ -34,44 +34,42 @@ export LDFLAGS="-L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="-I/usr/local/opt/sqlite/include"
 ```
 
-Para las Macs con Apple Silicon hay que asegurarse de que los paths de las librerias son correctos tratandose de Homebrew:
-
-Some library paths are different when using `homebrew` on Macs with Apple silicon, therefore the following two variables need to be set for Macs with Apple silicon:
+For Macs with `Apple Silicon` we need to make sure that the library paths are correct when using `homebrew`:
 
 ```bash
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 ```
 
-### Instalación de Bitcoin Core
+### Installing Bitcoin Core
 
-La manera mas sencilla es descargarnos Bitcoin Core de [bitcoincore.org](https://bitcoincore.org/en/download/), lo descomprimimos y lo arrastramos a nuestra carpeta de aplicaciones.
+The easiest way to install `Bitcoin Core` is downloading it from [bitcoincore.org](https://bitcoincore.org/en/download/), decompressing it and dragging it to our applications folder.
 
 :::info
-Tambien existe la opcion de compilar Bitcoin Core desde el código fuente.
+There is also the option to compile Bitcoin Core from the source code.
 :::
 
-Para poder correrlo, ademas de abrirlo desde aplicaciones hay a que otorgarle permisos en `System Settings` > `Privacy & Security`. Escrolleamos hasta abajo y hay que darle al boton `Open Anyway`.
+To be able to run it, besides opening it from applications we need to grant it permissions in `System Settings` > `Privacy & Security`. Scroll down and click the `Open Anyway` button.
 
 ![image](/img/bitcoin_core_macos_settings_open.png)
 
-En la configuracion inicial elegimos el directorio por defecto junto con la opcion de `1 GB`.
+At the initial configuration we choose the default directory along with the option of `1 GB`.
 
 ![image](/img/bitcoin_core_setup.png)
 
-Bitcoin Core va syncronizar y a descargar toda la blockchain, y eso va a tardar muchas horas dependiendo de tu equipo y tu conexion a internet.
+Bitcoin Core will synchronize and download the entire blockchain, and that will take a lot of time depending on your computer and internet connection.
 
 ![image](/img/bitcoin_core_sync.png)
 
 :::warning
-Sincronizar el todo el blockchain podria tardar muchas horas o incluso dias.
+Synchronizing the entire blockchain could take a lot of time or even days.
 :::
 
 :::danger
-En esta guia no vamos a sincronizar todo el blockchain, vamos a usar un Prune Node, o nodo podado y vamos a utilizar la red regtest.
+In this guide we will not synchronize the entire blockchain, we will use a `Prune Node`, and we will use the `regtest` network.
 :::
 
-Abrimos la app de Bitcoin Core y nos vamos a las preferencias de la aplicacion. En la prestania de `main` vamos a abrir el archivo de configuracion de bitcoin core en el boton que dice `Open Configuration File` y agregamoslo siguiente:
+Open the Bitcoin Core app and we will go to the preferences of the application. In the `main` tab we will open the configuration file of Bitcoin Core click the button that says `Open Configuration File` and add the following:
 
 ```bash title="bitcoin.conf"
 prune=550
@@ -83,36 +81,38 @@ rpcuser=foo
 rpcpassword=bar
 ```
 
-Reiniciamos la aplicacion de Bitcoin Core y esperamos a que se sincronice.
+Restart the Bitcoin Core application and wait until it is synchronized.
 
-Esto va a reducir significativamente el tiempo de sincronizacion asi como el espacio en disco que necesitamos.
+This will reduce the time of synchronization as well as the disk space we need.
 
-Despues de sincronizar la blockchain, cerramos la aplicacion grafica de Bitcoin Core, necesitamos correr bitcoin core en la terminal, para ello tenemos que instalarlo desde homebrew:
+After synchronizing the blockchain, close the Bitcoin Core graphical application, we need to run bitcoin core in the terminal, so we need to install it from homebrew:
 
 ```bash
 brew install bitcoin
 ```
 
-Hombrew nos va a instalar `bitcoind` y `bitcoin-cli`.
+Homebrew will install `bitcoind` and `bitcoin-cli`.
 
-### Ejecución de Bitcoin para Desarrollo
+### Running Bitcoin for Development
 
-Vamos a abrir dos ventanas o tabs de terminal:
-- En la primera terminal ejecutamos `bitcoind` el cual va a correr el nodo de bitcoin y va sincronizar el blockchain (si no sincronizamos antes).
+Open two terminal windows or tabs:
+
+- In the first terminal we are going to run `bitcoind` which will run the bitcoin node and synchronize the blockchain (if we haven't synchronized it before).
 
 ```bash
 bitcoind
 ```
 
-- En la segunda terminal ejecutamos `bitcoin-cli` donde nos va a mostrar la info del nodo.
+- In the second terminal we are going to run `bitcoin-cli` which will show the info of the node.
+
 
 ```bash
 bitcoin-cli getblockchaininfo
 ```
 
-Si todo sale bien deberiamos ver algo como esto:
+If everything goes well we should see something like this:
 
-```JSON title="getblockchaininfo salida"
+```JSON title="getblockchaininfo output"
 {
   "chain": "main",
   "blocks": 1,
@@ -134,23 +134,23 @@ Si todo sale bien deberiamos ver algo como esto:
 ```
 
 :::info
-Toda petición realizada con `bitcoin-cli` nos responderá en formato JSON.
+All requests made with `bitcoin-cli` will be in JSON format.
 :::
 
 :::note
-Si en tu caso la aplicación que quieres desarrollar es solamente para Bitcoin, sin tocar la Lightning Network, puedes saltarte el resto de la guia. Y tus siguientes pasos seran terminar de sincronizar la blockchain con `bitcoind` y luego seguir usando `bitcoin-cli`.
+If you are developing applications only for Bitcoin without touching the Lightning Network, you can skip the rest of this guide. And your next steps will be finishing synchronizing the blockchain with `bitcoind` and then using `bitcoin-cli`.
 :::
 
-## Instalación de Lightning
+## Installing Lightning
 
-Vamos a descargar el repositorio:
+Let's download the repository:
 
 ```bash
 git clone https://github.com/ElementsProject/lightning.git
 cd lightning
 ```
 
-Compilamos e instalamos lightning:
+Compile and install lightning:
 
 ```bash
 poetry install
@@ -158,15 +158,16 @@ poetry install
 poetry run make
 ```
 
-Corremos la testnet de lighning (en realidad regtest, pero eso lo explicaré en otra guía):
+Run the testnet of lighning (in fact regtest, but I will explain it later in another guide):
 
 ```bash
 . contrib/startup_regtest.sh
 ```
 
-El comando anterior es un script que va a correr `bitcoind`, `bitcion-cli`, `lightningd` y `lightning-cli`. Y nos va a dar la siguiente salida con unos comandos básicos.
+The command above is a script that will run `bitcoind`, `bitcion-cli`, `lightningd` and `lightning-cli`.
+And we get the following output with some basic commands.
 
-```bash title=". contrib/startup_regtest.sh salida"
+```bash title=". contrib/startup_regtest.sh output"
 Useful commands:
   start_ln 3: start three nodes, l1, l2, l3
   connect 1 2: connect l1 and l2
@@ -175,15 +176,15 @@ Useful commands:
   destroy_ln: remove ln directories
 ```
 
-El comando `start_ln` creará un par de nodos en la red lightning (l1 y l2).
+The command `start_ln` will create a pair of nodes in the lightning network (l1 and l2).
 
 ```bash
 start_ln
 ```
 
-Tambien nos dará una lista de comandos para interactuar con cada nodo:
+Also we will get a list of commands to interact with each node:
 
-```bash title="start_ln salida"
+```bash title="start_ln output"
 Bitcoin Core starting
 awaiting bitcoind...
 Loading "default" bitcoind wallet.
@@ -196,17 +197,17 @@ Commands:
 timed out parsing log /tmp/l1/log
 ```
 
-Vamos a obtener la información de uno de los nodos (l1).
+We will get the information of one of the nodes (l1).
 
 ```bash
 l1-cli getinfo
 ```
 
 :::info
-Toda petición realizada en lightning nos responderá en formato JSON.
+All requests made with lightning will be in JSON format.
 :::
 
-```JSON title="getinfo salida"
+```JSON title="getinfo output"
 {
    "id": "02d44e9a844e84ab76d412601c8e648ce039b8266874ddfe5b854fb6723096ea06",
    "alias": "SLICKERROUTE-v24.11-91-g9e29bde",
@@ -237,23 +238,23 @@ Toda petición realizada en lightning nos responderá en formato JSON.
 }
 ```
 
-Ahora vamos a agregarle fondos (unos cuantos satoshis) a los nodos:
+Now we are going to add some funds (a few satoshis) to the nodes:
 
 ```bash
 fund_nodes
 ```
 
-Genial!!
+Awesome!!
 
-Obtenemos la información de los fondos del nodo `l1`:
+We get the funds of the node `l1`:
 
 ```bash
 l1-cli listfunds
 ```
 
-La propiedad `amount_msat` es el monto en satoshis.
+The `amount_msat` property is the amount in satoshis.
 
-```JSON title="listfunds salida"
+```JSON title="listfunds output"
 {
    "outputs": [
       {
@@ -284,6 +285,6 @@ La propiedad `amount_msat` es el monto en satoshis.
 ```
 
 :::note
-¡Felicidades!! Ahora podemos construir aplicaciones sobre Bitcoin y Lightning Network.
-...bueno, mas o menos. Por lo menos podemos comenzar a experimentar con ello.
+Congratulations!! Now we can build applications on Bitcoin and Lightning Network.
+...well, kind of. Al least we can start experimenting with it.
 :::

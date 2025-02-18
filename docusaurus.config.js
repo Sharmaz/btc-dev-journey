@@ -137,9 +137,17 @@ const config = {
             title: 'Guides',
             items: [
               {
-                label: 'Guides',
+                label: 'Intro',
                 to: '/docs/intro',
               },
+              {
+                label: 'Getting started',
+                to: '/docs/getting-started',
+              },
+              {
+                label: 'Environment setup',
+                to: '/docs/environment-setup',
+              }
             ],
           },
           {

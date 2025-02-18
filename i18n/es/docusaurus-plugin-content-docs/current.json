@@ -18,5 +18,13 @@
   "sidebar.guideSidebar.category.Environment setup.link.generated-index.description": {
     "message": "Vamos a configurar el entorno de desarrollo para MacOS y Ubuntu.",
     "description": "The generated-index page description for category Environment setup in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Comenzando": {
+    "message": "Comenzando",
+    "description": "The label for category Comenzando in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Configuración": {
+    "message": "Configuración",
+    "description": "The label for category Configuración in sidebar guideSidebar"
   }
 }

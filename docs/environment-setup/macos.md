@@ -24,6 +24,7 @@ Python dependencies:
 ```bash
 pip install --upgrade pip
 pip install poetry
+pip install --user pyln-client websockets
 ```
 
 If you don't have SQLite you need to install it:
@@ -156,6 +157,14 @@ Compile and install lightning:
 poetry install
 ./configure
 poetry run make
+```
+
+We need to run `bitcoind`, `lightningd` and `lightning-cli` in the background with the `--regtest` flag:
+
+```bash
+bitcoind &
+./lightningd/lightningd --regtest &
+./cli/lightning-cli --regtest help
 ```
 
 Run the testnet of lighning (in fact regtest, but I will explain it later in another guide):

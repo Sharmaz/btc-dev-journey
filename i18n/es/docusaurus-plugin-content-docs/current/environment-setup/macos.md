@@ -19,11 +19,12 @@ brew install autoconf automake libtool gnu-sed gettext libsodium protobuf
 export PATH="/usr/local/opt:$PATH"
 ```
 
-Instalamos `poetry`:
+Dependiencias de Python:
 
 ```bash
 pip install --upgrade pip
 pip install poetry
+pip install --user pyln-client websockets
 ```
 
 Si no tenemos SQLite hay que instalarlo:
@@ -154,6 +155,14 @@ Compilamos e instalamos lightning:
 poetry install
 ./configure
 poetry run make
+```
+
+Necesitamos correr `bitcoind`, `lightningd` y `lightning-cli` en segundo plano con la flag `--regtest`:
+
+```bash
+bitcoind &
+./lightningd/lightningd --regtest &
+./cli/lightning-cli --regtest help
 ```
 
 Corremos la testnet de lighning (en realidad regtest, pero eso lo explicaré en otra guía):

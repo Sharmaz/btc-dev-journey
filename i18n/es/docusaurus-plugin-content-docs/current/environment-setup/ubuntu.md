@@ -13,13 +13,13 @@ Vamos a instalar `Python 3.12.3`.
 Las versiones superiores no me funcionaron. Me causaron errores mas adelante con Lightning Network.
 :::
 
-```bash title="Dependencias de python"
+Suponiendo que tengas instalado `python`, `build-essential` y `git` debes instalar las siguientes dependencias:
+
+```bash title="dependencies"
 sudo apt-get update
 sudo apt-get install -y \
-  jq autoconf automake build-essential git libtool libsqlite3-dev libffi-dev \
-  python3 python3-pip net-tools zlib1g-dev libsodium-dev gettext
-pip3 install --upgrade pip
-pip3 install --user poetry
+  jq autoconf automake libtool libsqlite3-dev libffi-dev \
+  net-tools zlib1g-dev libsodium-dev gettext
 ```
 
 ### Instalación de Bitcoin Core
@@ -31,9 +31,8 @@ Tambien existe la opción de compilar Bitcoin Core desde el código fuente.
 :::
 
 ```bash title="Bitcoin core"
-sudo apt-get install snapd
 sudo snap install bitcoin-core
-# Se agrega un link simbólico debido a que snap hace cosas raras cuando maneja binarios.
+# Creamos un link simbólico de bitcoind y bitcoin-cli desde el snap.
 sudo ln -s /snap/bitcoin-core/current/bin/bitcoin{d,-cli} /usr/local/bin/
 ```
 
@@ -208,7 +207,7 @@ Obtenemos la información de los fondos del nodo `l1`:
 l1-cli listfunds
 ```
 
-La propiedad `amount_msat` es el monto en satoshis.
+La propiedad `our_amount_msat` es el monto en satoshis.
 
 ```JSON title="listfunds salida"
 {

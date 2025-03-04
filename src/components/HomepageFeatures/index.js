@@ -1,36 +1,47 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import Translate from '@docusaurus/Translate';
+
 import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: (
+      <Translate>
+        Start with the basis
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
+      <Translate>
+        Do you already know what is a node and which kind of nodes exist? or what is the difference between mainnet, testnet and regtest?.
+      </Translate>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: (
+      <Translate>
+        Configure a node on your PC
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+      <Translate>
+        Learn step by step how to install, configure and run a bitcoin and lightning network node.
+      </Translate>
     ),
   },
   {
-    title: 'Powered by React',
+    title: (
+      <Translate>
+        Create your first application
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+      <Translate>
+        If you already have your node running and your development environment we will go what follows. Let's create applications.
+      </Translate>
     ),
   },
 ];

@@ -7,5 +7,7 @@
 
 .featureSvg {
   height: 200px;
-  width: 200px;
+  width: 300px;
+  object-fit: cover;
+  filter: contrast(100%) sepia(100%) hue-rotate(55deg) brightness(1) saturate(3);
 }

@@ -317,5 +317,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
+  },
+  "Do you already know what is a node and which kind of nodes exist? or what is the difference between mainnet, testnet and regtest?.": {
+    "message": "Ya sabes ¿que es un nodo y que tipos de nodos existen? o ¿cual es la diferencia entre mainet, testnet y regtest?."
+  },
+  "Learn step by step how to install, configure and run a bitcoin and lightning network node.": {
+    "message": "Aprende paso a paso como instalar, configurar y correr un nodo de bitcoin y de lightning network."
+  },
+  "If you already have your node running and your development environment we will go what follows. Let's create applications.": {
+    "message": "Si ya cuentas con tu nodo corriendo y tu entorno de desarrollo vamos a lo que sigue. A crear aplicaciones."
+  },
+  "Start with the basis": {
+    "message": "Comienza con las bases"
+  },
+  "Configure a node on your PC": {
+    "message": "Configura un nodo en tu PC"
+  },
+  "Crea tu primer aplicación": {
+    "message": "Create your first application"
   }
 }

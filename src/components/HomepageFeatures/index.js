@@ -11,7 +11,7 @@ const FeatureList = [
         Start with the basis
       </Translate>
     ),
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    imgUrl: require('@site/static/img/bitcoin-basics.webp').default,
     description: (
       <Translate>
         Do you already know what is a node and which kind of nodes exist? or what is the difference between mainnet, testnet and regtest?.
@@ -24,7 +24,7 @@ const FeatureList = [
         Configure a node on your PC
       </Translate>
     ),
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    imgUrl: require('@site/static/img/bitcoin-nodes.webp').default,
     description: (
       <Translate>
         Learn step by step how to install, configure and run a bitcoin and lightning network node.
@@ -37,7 +37,7 @@ const FeatureList = [
         Create your first application
       </Translate>
     ),
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    imgUrl: require('@site/static/img/bitcoin-programming.webp').default,
     description: (
       <Translate>
         If you already have your node running and your development environment we will go what follows. Let's create applications.
@@ -46,11 +46,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({imgUrl, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={imgUrl} alt="Bitcoin Logo" className={styles.featureSvg} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

@@ -36,15 +36,31 @@ sudo snap install bitcoin-core
 sudo ln -s /snap/bitcoin-core/current/bin/bitcoin{d,-cli} /usr/local/bin/
 ```
 
-:::tip
-En caso de que directamente vayas a desarrollar aplicaciones para Ligthning Network, te recomiendo saltarte el paso que sigue e ir directamente a [Instalación de Lightning](#instalación-de-lightning).
-:::
+Este nodo de bitcoin como lo vamos a usar para desarrollar aplicaciones no nos vamos a traer toda la blockchain (casi 1TB) vamos a configurar un pruned node o nodo podado.
+
+Vamos a crear el archivo de configuracion de nuestro nodo:
+```bash
+nano ~/.bitcoin/bitcoin.conf
+```
+
+Dentro vamos a agregar la siguiente configuracion:
+```bash title="bitcoin.conf"
+regtest=1
+txindex=0
+prune=550
+fallbackfee=0.0002
+
+[regtest]
+rcpport=18443
+rpcuser=foo
+rpcpassword=bar
+```
 
 ### Ejecución de Bitcoin para Desarrollo
 
 Vamos a abrir dos ventanas o pestañas de terminal:
 
-- En la primera terminal ejecutamos `bitcoind` el cual va a correr el nodo de bitcoin y va sincronizar el blockchain que son mas de medio terabyte.
+- En la primera terminal ejecutamos `bitcoind` el cual va a correr el nodo de bitcoin y va sincronizar el blockchain como es un pruned node solo traera una parte minima de la blockchain.
 
 ```bash
 bitcoind

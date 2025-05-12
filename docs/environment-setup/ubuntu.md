@@ -36,14 +36,30 @@ sudo snap install bitcoin-core
 sudo ln -s /snap/bitcoin-core/current/bin/bitcoin{d,-cli} /usr/local/bin/
 ```
 
-:::tip
-In case you are developing applications for Lightning Network, I recommend you to skip the step that follows and go directly to [Installing Lightning](#installing-lightning).
-:::
+We are going to use our Bitcoin node for development purposes, so instead of syncing the entire blockchain, we need to configure a pruned node.
+
+Lets create the config file:
+```bash
+nano ~/.bitcoin/bitcoin.conf
+```
+
+Include the following configuration parameters:
+```bash title="bitcoin.conf"
+regtest=1
+txindex=0
+prune=550
+fallbackfee=0.0002
+
+[regtest]
+rcpport=18443
+rpcuser=foo
+rpcpassword=bar
+```
 
 ### Running Bitcoin for Development
 
 At this point we will open two terminals:
-- In the first terminal we are going to run `bitcoind` which will run the bitcoin node and synchronize the blockchain which is more than half a terabyte.
+- In the first terminal we are going to run `bitcoind`, which will start the Bitcoin node and synchronize the blockchain—well, just a minimal part of it, since we configured a pruned node.
 
 ```bash
 bitcoind

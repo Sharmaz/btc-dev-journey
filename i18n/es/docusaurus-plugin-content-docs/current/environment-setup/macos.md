@@ -73,8 +73,10 @@ En esta guía no vamos a sincronizar todo el blockchain, vamos a usar un `Prune 
 Abrimos la app de Bitcoin Core y nos vamos a las preferencias de la aplicación. En la prestaña de `main` vamos a abrir el archivo de configuración de bitcoin core en el boton que dice `Open Configuration File` y agregamos lo siguiente:
 
 ```bash title="bitcoin.conf"
-prune=550
 regtest=1
+txindex=0
+prune=550
+fallbackfee=0.0002
 
 [regtest]
 rcpport=18443
@@ -156,6 +158,10 @@ poetry install
 ./configure
 poetry run make
 ```
+
+:::warning
+En mi caso como uso un version manager ASDF tengo que especificar el path de poetry en mi archivo .zhrc.
+:::
 
 Necesitamos correr `bitcoind`, `lightningd` y `lightning-cli` en segundo plano con la flag `--regtest`:
 

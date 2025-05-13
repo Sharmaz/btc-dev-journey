@@ -46,9 +46,9 @@ nano ~/.bitcoin/bitcoin.conf
 Include the following configuration parameters:
 ```bash title="bitcoin.conf"
 regtest=1
-txindex=0
+
+[main]
 prune=550
-fallbackfee=0.0002
 
 [regtest]
 rcpport=18443

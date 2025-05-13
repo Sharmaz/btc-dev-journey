@@ -74,9 +74,9 @@ Abrimos la app de Bitcoin Core y nos vamos a las preferencias de la aplicación.
 
 ```bash title="bitcoin.conf"
 regtest=1
-txindex=0
+
+[main]
 prune=550
-fallbackfee=0.0002
 
 [regtest]
 rcpport=18443

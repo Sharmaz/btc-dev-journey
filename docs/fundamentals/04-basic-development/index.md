@@ -171,9 +171,9 @@ bitcoin-cli -regtest getrawtransaction <txid> true
 
 With these fundamentals under your belt, you're ready to choose a specialization track:
 
-- **Protocol Developer** — Dive into Bitcoin Core internals
-- **Application Developer** — Build wallets and apps
-- **Infrastructure Developer** — Create explorers and APIs
-- **Mining Developer** — Develop mining software
+- [Protocol Developer](/docs/tracks/protocol-developer) — Dive into Bitcoin Core internals
+- [Application Developer](/docs/tracks/application-developer) — Build wallets and apps
+- **Infrastructure Developer** — Create explorers and APIs (coming soon)
+- **Mining Developer** — Develop mining software (coming soon)
 
 Check the [Types of Developers](/docs/roadmap/developer-types) page to help you decide.

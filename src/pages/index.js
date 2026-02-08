@@ -51,7 +51,7 @@ const TrackList = [
         Work on Bitcoin Core internals, consensus rules, and protocol improvements.
       </Translate>
     ),
-    link: '/docs/roadmap/developer-types#protocol-developer',
+    link: '/docs/tracks/protocol-developer',
   },
   {
     title: 'Application Developer',
@@ -62,7 +62,7 @@ const TrackList = [
         Build wallets, payment processors, exchanges, and Lightning apps.
       </Translate>
     ),
-    link: '/docs/roadmap/developer-types#application-developer',
+    link: '/docs/tracks/application-developer',
   },
   {
     title: 'Infrastructure Developer',

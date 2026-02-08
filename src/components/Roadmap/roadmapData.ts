@@ -80,7 +80,7 @@ export const nodes: Node[] = [
   // Tracks (spread horizontally)
   {
     id: 'protocol',
-    data: { label: 'Protocol Developer', url: '/docs/roadmap/developer-types#protocol-developer' },
+    data: { label: 'Protocol Developer', url: '/docs/tracks/protocol-developer' },
     position: { x: 0, y: 540 },
     style: {
       ...trackStyle,
@@ -91,7 +91,7 @@ export const nodes: Node[] = [
   },
   {
     id: 'application',
-    data: { label: 'Application Developer', url: '/docs/roadmap/developer-types#application-developer' },
+    data: { label: 'Application Developer', url: '/docs/tracks/application-developer' },
     position: { x: 260, y: 540 },
     style: {
       ...trackStyle,

@@ -91,6 +91,27 @@ const sidebars = {
         'tracks/application-developer/protocols-on-bitcoin/index',
       ],
     },
+    {
+      type: 'category',
+      label: 'Cross-Cutting Topics',
+      items: [
+        'cross-cutting/security/index',
+        'cross-cutting/privacy/index',
+        'cross-cutting/sidechains-l2/index',
+        'cross-cutting/smart-contracts/index',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        'resources/books',
+        'resources/courses',
+        'resources/communities',
+        'resources/tools',
+      ],
+    },
+    'practical-projects/index',
   ],
 };
 

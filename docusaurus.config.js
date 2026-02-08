@@ -168,17 +168,33 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Resources',
             items: [
               {
-                label: 'Bitcoin Guadalajara',
-                href: 'https://btcgdl.com/',
+                label: 'Books',
+                to: '/docs/resources/books',
+              },
+              {
+                label: 'Courses',
+                to: '/docs/resources/courses',
+              },
+              {
+                label: 'Communities',
+                to: '/docs/resources/communities',
+              },
+              {
+                label: 'Practical Projects',
+                to: '/docs/practical-projects',
               },
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                label: 'Bitcoin Guadalajara',
+                href: 'https://btcgdl.com/',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/Sharmaz/btc-dev-journey',

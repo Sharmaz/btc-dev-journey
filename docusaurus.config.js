@@ -147,7 +147,24 @@ const config = {
               {
                 label: 'Environment setup',
                 to: '/docs/environment-setup',
-              }
+              },
+            ],
+          },
+          {
+            title: 'Roadmap',
+            items: [
+              {
+                label: 'Developer Roadmap',
+                to: '/docs/roadmap',
+              },
+              {
+                label: 'Fundamentals',
+                to: '/docs/fundamentals/prerequisites',
+              },
+              {
+                label: 'Types of Developers',
+                to: '/docs/roadmap/developer-types',
+              },
             ],
           },
           {

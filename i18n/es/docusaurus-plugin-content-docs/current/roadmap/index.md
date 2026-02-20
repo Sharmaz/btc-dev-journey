@@ -1,16 +1,17 @@
 ---
 sidebar_position: 1
 title: Roadmap del Desarrollador Bitcoin
-description: Roadmap interactivo para guiar tu camino como desarrollador Bitcoin
+description: Roadmap visual para guiar tu camino como desarrollador Bitcoin
+hide_table_of_contents: true
 ---
 
 # Roadmap del Desarrollador Bitcoin
 
-Este roadmap interactivo te ayudará a navegar tu ruta de aprendizaje como desarrollador Bitcoin. Comienza con los fundamentos universales y luego elige un track de especialización que se adapte a tus intereses.
+Haz clic en cualquier nodo para aprender más sobre el tema y encontrar enlaces a la documentación correspondiente.
 
-import RoadmapDiagram from '@site/src/components/Roadmap/RoadmapDiagram';
+import RoadmapSVG from '@site/src/components/Roadmap/RoadmapSVG';
 
-<RoadmapDiagram />
+<RoadmapSVG />
 
 ## Cómo Usar Este Roadmap
 

@@ -32,6 +32,7 @@ const sidebars = {
       items: [
         'roadmap/how-to-use',
         'roadmap/developer-types',
+        'roadmap/svg-roadmap',
       ],
     },
     {

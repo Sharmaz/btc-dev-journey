@@ -41,6 +41,65 @@ function HomepageHeader() {
   );
 }
 
+const TrackList = [
+  {
+    title: 'Protocol Developer',
+    emoji: '\u2699\ufe0f',
+    color: '#6366f1',
+    description: (
+      <Translate id="homepage.track.protocol">
+        Work on Bitcoin Core internals, consensus rules, and protocol improvements.
+      </Translate>
+    ),
+    link: '/docs/tracks/protocol-developer',
+  },
+  {
+    title: 'Application Developer',
+    emoji: '\ud83d\udcf1',
+    color: '#ec4899',
+    description: (
+      <Translate id="homepage.track.application">
+        Build wallets, payment processors, exchanges, and Lightning apps.
+      </Translate>
+    ),
+    link: '/docs/tracks/application-developer',
+  },
+  {
+    title: 'Infrastructure Developer',
+    emoji: '\ud83c\udfd7\ufe0f',
+    color: '#f97316',
+    description: (
+      <Translate id="homepage.track.infrastructure">
+        Create block explorers, indexers, APIs, and node infrastructure.
+      </Translate>
+    ),
+    link: '/docs/roadmap/developer-types#infrastructure-developer',
+  },
+  {
+    title: 'Mining Developer',
+    emoji: '\u26cf\ufe0f',
+    color: '#14b8a6',
+    description: (
+      <Translate id="homepage.track.mining">
+        Develop mining pool software, firmware, and optimization tools.
+      </Translate>
+    ),
+    link: '/docs/roadmap/developer-types#mining-developer',
+  },
+];
+
+function TrackCard({title, emoji, color, description, link}) {
+  return (
+    <div className={clsx('col col--3')}>
+      <Link to={link} className={styles.trackCard} style={{borderColor: color}}>
+        <span className={styles.trackEmoji}>{emoji}</span>
+        <Heading as="h3" className={styles.trackTitle}>{title}</Heading>
+        <p className={styles.trackDescription}>{description}</p>
+      </Link>
+    </div>
+  );
+}
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -50,6 +109,34 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <section className={styles.tracks}>
+          <div className="container">
+            <Heading as="h2" className={styles.tracksHeading}>
+              <Translate id="homepage.tracks.title">
+                Choose Your Track
+              </Translate>
+            </Heading>
+            <p className={styles.tracksSubtitle}>
+              <Translate id="homepage.tracks.subtitle">
+                Master the fundamentals, then specialize in the area that excites you most.
+              </Translate>
+            </p>
+            <div className="row">
+              {TrackList.map((props, idx) => (
+                <TrackCard key={idx} {...props} />
+              ))}
+            </div>
+            <div className={styles.buttons} style={{marginTop: '2rem'}}>
+              <Link
+                className="button button--primary button--lg"
+                to="/docs/roadmap">
+                <Translate id="homepage.tracks.cta">
+                  View Full Roadmap
+                </Translate>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );

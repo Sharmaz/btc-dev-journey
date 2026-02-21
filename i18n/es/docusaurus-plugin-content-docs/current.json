@@ -26,5 +26,37 @@
   "sidebar.guideSidebar.category.Configuración": {
     "message": "Configuración",
     "description": "The label for category Configuración in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Bitcoin Developer Roadmap": {
+    "message": "Roadmap del Desarrollador Bitcoin",
+    "description": "The label for category Bitcoin Developer Roadmap in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Fundamentals": {
+    "message": "Fundamentos",
+    "description": "The label for category Fundamentals in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Protocol Developer": {
+    "message": "Desarrollador de Protocolo",
+    "description": "The label for category Protocol Developer in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Bitcoin Core Internals": {
+    "message": "Internos de Bitcoin Core",
+    "description": "The label for category Bitcoin Core Internals in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Application Developer": {
+    "message": "Desarrollador de Aplicaciones",
+    "description": "The label for category Application Developer in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Libraries & SDKs": {
+    "message": "Librerías y SDKs",
+    "description": "The label for category Libraries & SDKs in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Cross-Cutting Topics": {
+    "message": "Temas Transversales",
+    "description": "The label for category Cross-Cutting Topics in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.Resources": {
+    "message": "Recursos",
+    "description": "The label for category Resources in sidebar guideSidebar"
   }
 }

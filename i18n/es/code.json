@@ -335,5 +335,33 @@
   },
   "Crea tu primer aplicación": {
     "message": "Create your first application"
+  },
+  "homepage.tracks.title": {
+    "message": "Elige Tu Especialización",
+    "description": "The title of the tracks section on the homepage"
+  },
+  "homepage.tracks.subtitle": {
+    "message": "Domina los fundamentos, luego especialízate en el área que más te apasione.",
+    "description": "The subtitle of the tracks section on the homepage"
+  },
+  "homepage.tracks.cta": {
+    "message": "Ver Roadmap Completo",
+    "description": "The CTA button to view the full roadmap"
+  },
+  "homepage.track.protocol": {
+    "message": "Trabaja en los internos de Bitcoin Core, reglas de consenso y mejoras al protocolo.",
+    "description": "Description for the Protocol Developer track"
+  },
+  "homepage.track.application": {
+    "message": "Construye wallets, procesadores de pagos, exchanges y apps Lightning.",
+    "description": "Description for the Application Developer track"
+  },
+  "homepage.track.infrastructure": {
+    "message": "Crea exploradores de bloques, indexadores, APIs e infraestructura de nodos.",
+    "description": "Description for the Infrastructure Developer track"
+  },
+  "homepage.track.mining": {
+    "message": "Desarrolla software para pools de minería, firmware y herramientas de optimización.",
+    "description": "Description for the Mining Developer track"
   }
 }

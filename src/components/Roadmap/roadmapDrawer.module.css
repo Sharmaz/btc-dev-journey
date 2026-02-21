@@ -1,0 +1,117 @@
+.drawer {
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  right: 0;
+  width: 340px;
+  height: calc(100vh - var(--ifm-navbar-height));
+  background: #ffffff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 9998;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* Keep white background in dark mode (roadmap.sh style) */
+[data-theme='dark'] .drawer {
+  background: #ffffff;
+}
+
+.closeBtn {
+  position: sticky;
+  top: 1rem;
+  float: right;
+  margin: 1rem 1rem 0 0;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.closeBtn:hover {
+  background: #f0f0f0;
+}
+
+.content {
+  padding: 1rem 1.5rem 2rem;
+  clear: both;
+}
+
+.title {
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.description {
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #444;
+  margin: 0 0 1.25rem;
+}
+
+.linksLabel {
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 0.5rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin-bottom: 0.4rem;
+}
+
+.links a {
+  color: #2B78E4;
+  font-family: Arial, system-ui, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

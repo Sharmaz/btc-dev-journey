@@ -21,3 +21,61 @@
   align-items: center;
   justify-content: center;
 }
+
+.tracks {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.tracksHeading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tracksSubtitle {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 2rem;
+}
+
+.trackCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border: 2px solid;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.trackCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+}
+
+.trackEmoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.trackTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.trackDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .trackCard {
+    margin-bottom: 1rem;
+  }
+}

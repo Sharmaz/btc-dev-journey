@@ -147,21 +147,54 @@ const config = {
               {
                 label: 'Environment setup',
                 to: '/docs/environment-setup',
-              }
+              },
             ],
           },
           {
-            title: 'Community',
+            title: 'Roadmap',
             items: [
               {
-                label: 'Bitcoin Guadalajara',
-                href: 'https://btcgdl.com/',
+                label: 'Developer Roadmap',
+                to: '/docs/roadmap',
+              },
+              {
+                label: 'Fundamentals',
+                to: '/docs/fundamentals/prerequisites',
+              },
+              {
+                label: 'Types of Developers',
+                to: '/docs/roadmap/developer-types',
+              },
+            ],
+          },
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Books',
+                to: '/docs/resources/books',
+              },
+              {
+                label: 'Courses',
+                to: '/docs/resources/courses',
+              },
+              {
+                label: 'Communities',
+                to: '/docs/resources/communities',
+              },
+              {
+                label: 'Practical Projects',
+                to: '/docs/practical-projects',
               },
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                label: 'Bitcoin Guadalajara',
+                href: 'https://btcgdl.com/',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/Sharmaz/btc-dev-journey',

@@ -3,68 +3,223 @@
  * and scoped locally.
  */
 
+/* ── Hero ─────────────────────────────────────────── */
+
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tracks {
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.tracksHeading {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.tracksSubtitle {
-  font-size: 1.1rem;
-  color: var(--ifm-color-emphasis-600);
-  margin-bottom: 2rem;
-}
-
-.trackCard {
+  background-color: var(--ifm-background-color);
+  background-image: radial-gradient(rgba(59, 227, 8, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem;
-  border: 2px solid;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 0 4rem;
+  position: relative;
+}
+
+[data-theme='light'] .heroBanner {
+  background-color: #f5f7f5;
+  background-image: radial-gradient(rgba(30, 120, 10, 0.08) 1px, transparent 1px);
+}
+
+.heroTitle {
+  font-family: 'Fira Code', monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--ifm-background-color));
+  pointer-events: none;
+}
+
+/* ── Learning Path (mobile-first vertical) ────────── */
+
+.learningPath {
+  padding: 4rem 0 3.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeading {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+}
+
+.pathSteps {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 0;
+}
+
+.pathSteps::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: calc(1.25rem + 24px);
+  right: auto;
+  width: 2px;
+  height: auto;
+  background: var(--ifm-color-primary);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.pathStep {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 0 0 1rem 1.25rem;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.pathStep:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pathStepLast {
+  padding-bottom: 0;
+}
+
+.stepCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.pathStep:hover .stepCircle {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  box-shadow: 0 0 16px rgba(59, 227, 8, 0.35);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.stepBlurb {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Tracks (mobile: 1 columna) ───────────────────── */
+
+.tracks {
+  padding: 4rem 0;
+}
+
+.trackGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.trackCard {
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  min-height: 240px;
 }
 
 .trackCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--track-color);
+  box-shadow: 0 8px 32px var(--track-glow), 0 2px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: inherit;
 }
 
-.trackEmoji {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.trackIconWrap {
+  width: 52px;
+  height: 52px;
+  color: var(--track-color);
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+.trackIconWrap svg {
+  width: 100%;
+  height: 100%;
 }
 
 .trackTitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
@@ -72,10 +227,130 @@
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-600);
   margin: 0;
+  line-height: 1.5;
 }
 
-@media screen and (max-width: 996px) {
+.sectionCta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* ── Tablet (481px+) ──────────────────────────────── */
+
+@media screen and (min-width: 481px) {
+  /* Path: scale up dots */
+  .pathSteps::before {
+    top: 30px;
+    bottom: 30px;
+    left: calc(1.25rem + 30px);
+  }
+
+  .pathStep {
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+  }
+
+  .stepCircle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.1rem;
+  }
+
+  .stepTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .stepBlurb {
+    font-size: 1rem;
+  }
+
+  /* Tracks: 2 columnas */
+  .trackGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
   .trackCard {
-    margin-bottom: 1rem;
+    min-height: 280px;
+  }
+}
+
+/* ── Desktop (997px+) ─────────────────────────────── */
+
+@media screen and (min-width: 997px) {
+  /* Hero */
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  /* Path: horizontal layout */
+  .pathSteps {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: none;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  .pathSteps::before {
+    top: 35px;
+    bottom: auto;
+    left: calc(1rem + 10%);
+    right: calc(1rem + 10%);
+    width: auto;
+    height: 2px;
+  }
+
+  .pathStep {
+    flex: 1;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.75rem;
+    gap: 0;
+  }
+
+  .stepCircle {
+    width: 72px;
+    height: 72px;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stepTitle {
+    font-size: 1rem;
+  }
+
+  .stepBlurb {
+    font-size: 0.85rem;
+  }
+
+  /* Tracks: 4 columnas */
+  .trackGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .trackCard {
+    min-height: 300px;
+  }
+}
+
+/* ── Mobile pequeño (max 480px) ───────────────────── */
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroBanner {
+    padding: 3rem 1.5rem 3rem;
+    min-height: 60vh;
   }
 }

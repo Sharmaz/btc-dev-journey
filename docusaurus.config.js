@@ -17,9 +17,17 @@ const config = {
   baseUrl: '/',
   organizationName: 'Sharmaz',
   projectName: 'btc-dev-journey',
-  trailingSlash: false,
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
+  scripts: [
+    {
+      src: 'https://analytics.ahrefs.com/analytics.js',
+      'data-key': 'kQ78wQaAsbSQiiponLkndA',
+      async: true,
+    },
+  ],
 
   markdown: {
     mermaid: true,
@@ -103,7 +111,7 @@ const config = {
       },
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: false,
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       navbar: {

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbtc_dev_journey=globalThis.webpackChunkbtc_dev_journey||[]).push([[5742],{7093(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);

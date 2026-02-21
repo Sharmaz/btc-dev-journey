@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbtc_dev_journey=globalThis.webpackChunkbtc_dev_journey||[]).push([[2325],{2325(e,c,a){a.d(c,{createPacketServices:()=>b.$});var b=a(1477);a(7960)}}]);

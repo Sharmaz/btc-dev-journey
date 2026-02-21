@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbtc_dev_journey=globalThis.webpackChunkbtc_dev_journey||[]).push([[6366],{6366(e,c,r){r.d(c,{createArchitectureServices:()=>t.S});var t=r(8980);r(7960)}}]);

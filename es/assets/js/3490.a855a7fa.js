@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbtc_dev_journey=globalThis.webpackChunkbtc_dev_journey||[]).push([[3490],{3490(e,c,a){a.d(c,{createInfoServices:()=>b.v});var b=a(1885);a(7960)}}]);

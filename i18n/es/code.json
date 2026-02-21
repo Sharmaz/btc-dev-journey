@@ -363,5 +363,57 @@
   "homepage.track.mining": {
     "message": "Desarrolla software para pools de minería, firmware y herramientas de optimización.",
     "description": "Description for the Mining Developer track"
+  },
+  "homepage.hero.cta.roadmap": {
+    "message": "Ver Roadmap",
+    "description": "Button to view the full roadmap"
+  },
+  "homepage.path.title": {
+    "message": "El Camino de Aprendizaje",
+    "description": "Title of the learning path section"
+  },
+  "homepage.path.subtitle": {
+    "message": "Domina estos 5 fundamentos antes de elegir tu especialización.",
+    "description": "Subtitle of the learning path section"
+  },
+  "homepage.path.step.1.title": {
+    "message": "Prerequisitos",
+    "description": "Step 1 title"
+  },
+  "homepage.path.step.1.blurb": {
+    "message": "Programación, matemáticas, sistemas",
+    "description": "Step 1 blurb"
+  },
+  "homepage.path.step.2.title": {
+    "message": "Fundamentos de Bitcoin",
+    "description": "Step 2 title"
+  },
+  "homepage.path.step.2.blurb": {
+    "message": "Historia, criptografía",
+    "description": "Step 2 blurb"
+  },
+  "homepage.path.step.3.title": {
+    "message": "Arquitectura de Bitcoin",
+    "description": "Step 3 title"
+  },
+  "homepage.path.step.3.blurb": {
+    "message": "UTXO, transacciones, Script",
+    "description": "Step 3 blurb"
+  },
+  "homepage.path.step.4.title": {
+    "message": "Red P2P",
+    "description": "Step 4 title"
+  },
+  "homepage.path.step.4.blurb": {
+    "message": "Comunicación entre nodos, protocolo",
+    "description": "Step 4 blurb"
+  },
+  "homepage.path.step.5.title": {
+    "message": "Desarrollo Básico",
+    "description": "Step 5 title"
+  },
+  "homepage.path.step.5.blurb": {
+    "message": "Configurar nodo, operaciones de wallet",
+    "description": "Step 5 blurb"
   }
 }

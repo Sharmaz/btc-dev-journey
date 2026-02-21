@@ -21,6 +21,14 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  scripts: [
+    {
+      src: 'https://analytics.ahrefs.com/analytics.js',
+      'data-key': 'kQ78wQaAsbSQiiponLkndA',
+      async: true,
+    },
+  ],
+
   markdown: {
     mermaid: true,
   },

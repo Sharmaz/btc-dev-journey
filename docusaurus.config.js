@@ -17,7 +17,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'Sharmaz',
   projectName: 'btc-dev-journey',
-  trailingSlash: false,
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 

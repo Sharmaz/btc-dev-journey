@@ -46,13 +46,14 @@ const TRACK_COLORS = [
 
 function Node({
   x, y, w = NW, h = NH, label, kind = 'yellow', fs = 13,
-  nodeId, onNodeClick, isActive,
+  nodeId, onNodeClick, isActive, notRecommended,
 }: {
   x: number; y: number; w?: number; h?: number;
   label: string; kind?: 'yellow' | 'white' | 'gray' | 'faded'; fs?: number;
   nodeId?: string;
   onNodeClick?: (id: string) => void;
   isActive?: boolean;
+  notRecommended?: boolean;
 }) {
   const cx = x + w / 2;
   const cy = y + h / 2;
@@ -94,6 +95,15 @@ function Node({
           {ln}
         </text>
       ))}
+      {notRecommended && (
+        <g>
+          <circle cx={x + w - 13} cy={y + h / 2} r={9}
+            fill="#ef4444" stroke="#ffffff" strokeWidth={1.5} />
+          <text x={x + w - 13} y={y + h / 2}
+            textAnchor="middle" dominantBaseline="middle"
+            fill="#ffffff" fontFamily={FONT} fontSize={9} fontWeight={700}>!</text>
+        </g>
+      )}
     </g>
   );
 }
@@ -121,23 +131,25 @@ export default function RoadmapSVG() {
 
   // ─── UI strings (translated) ────────────────────────────────────────────────
   const ui = isEs ? {
-    title:         'Desarrollador Bitcoin',
-    chooseTrack:   'Elige Tu Track',
-    fundamentals:  ['Prerequisitos', 'Fundamentos de Bitcoin', 'Arquitectura de Bitcoin', 'Red P2P', 'Desarrollo Básico'],
-    tracks:        ['Desarrollador\nde Protocolo', 'Desarrollador\nde Aplicaciones', 'Desarrollador\nde Infraestructura', 'Desarrollador\nde Minería'],
-    crossLabel:    'TEMAS TRANSVERSALES',
-    legendMain:    'Tema Principal',
-    legendSub:     'Sub-Tema',
-    legendPath:    'Ruta de Aprendizaje',
+    title:          'Desarrollador Bitcoin',
+    chooseTrack:    'Elige Tu Track',
+    fundamentals:   ['Prerequisitos', 'Fundamentos de Bitcoin', 'Arquitectura de Bitcoin', 'Red P2P', 'Desarrollo Básico'],
+    tracks:         ['Desarrollador\nde Protocolo', 'Desarrollador\nde Aplicaciones', 'Desarrollador\nde Infraestructura', 'Desarrollador\nde Minería'],
+    crossLabel:     'TEMAS TRANSVERSALES',
+    legendMain:     'Tema Principal',
+    legendSub:      'Sub-Tema',
+    legendPath:     'Ruta de Aprendizaje',
+    legendNotRec:   'No Recomendado',
   } : {
-    title:         'Bitcoin Developer',
-    chooseTrack:   'Choose Your Track',
-    fundamentals:  ['Prerequisites', 'Bitcoin Fundamentals', 'Bitcoin Architecture', 'P2P Network', 'Basic Development'],
-    tracks:        ['Protocol\nDeveloper', 'Application\nDeveloper', 'Infrastructure\nDeveloper', 'Mining\nDeveloper'],
-    crossLabel:    'CROSS-CUTTING TOPICS',
-    legendMain:    'Main Topic',
-    legendSub:     'Sub-Topic',
-    legendPath:    'Learning Path',
+    title:          'Bitcoin Developer',
+    chooseTrack:    'Choose Your Track',
+    fundamentals:   ['Prerequisites', 'Bitcoin Fundamentals', 'Bitcoin Architecture', 'P2P Network', 'Basic Development'],
+    tracks:         ['Protocol\nDeveloper', 'Application\nDeveloper', 'Infrastructure\nDeveloper', 'Mining\nDeveloper'],
+    crossLabel:     'CROSS-CUTTING TOPICS',
+    legendMain:     'Main Topic',
+    legendSub:      'Sub-Topic',
+    legendPath:     'Learning Path',
+    legendNotRec:   'Not Recommended',
   };
 
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -210,7 +222,7 @@ export default function RoadmapSVG() {
     { label: 'Wallet Development',     id: 'wallet-development' },
     { label: 'Payment Processing',     id: 'payment-processing' },
     { label: 'Exchange & Trading',     id: 'exchange-trading' },
-    { label: 'Web3 on Bitcoin',        id: 'web3-bitcoin' },
+    { label: 'Web3 on Bitcoin',        id: 'web3-bitcoin', notRecommended: true },
     { label: 'Advanced Protocols',     id: 'advanced-protocols' },
     { label: 'Protocols on Bitcoin',   id: 'protocols-on-bitcoin' },
   ];
@@ -385,7 +397,8 @@ export default function RoadmapSVG() {
                 )}
                 <Node x={NX[1]} y={y} label={item.label} kind="white" fs={12}
                   nodeId={item.id} onNodeClick={handleNodeClick}
-                  isActive={activeId === item.id} />
+                  isActive={activeId === item.id}
+                  notRecommended={(item as any).notRecommended} />
               </g>
             );
           })}
@@ -455,7 +468,7 @@ export default function RoadmapSVG() {
 
           {/* ── LEGEND ───────────────────────────────────────────────────────── */}
           <g transform={`translate(${W - 186}, 68)`}>
-            <rect x={0} y={0} width={168} height={84} rx={7}
+            <rect x={0} y={0} width={168} height={108} rx={7}
               fill={GRAY_BG} stroke={GRAY_BDR} strokeWidth={1} />
             <rect x={10} y={12} width={26} height={16} rx={4}
               fill={YELLOW} stroke={YELLOW_BDR} strokeWidth={1.5} />
@@ -469,6 +482,11 @@ export default function RoadmapSVG() {
               stroke={BLUE} strokeWidth={2} strokeDasharray="6 4" />
             <text x={44} y={69} fill={TEXT_DARK} fontFamily={FONT}
               fontSize={11} dominantBaseline="middle">{ui.legendPath}</text>
+            <circle cx={23} cy={93} r={7} fill="#ef4444" stroke={GRAY_BG} strokeWidth={1} />
+            <text x={23} y={93} textAnchor="middle" dominantBaseline="middle"
+              fill="#ffffff" fontFamily={FONT} fontSize={8} fontWeight={700}>!</text>
+            <text x={44} y={93} fill={TEXT_DARK} fontFamily={FONT}
+              fontSize={11} dominantBaseline="middle">{ui.legendNotRec}</text>
           </g>
 
         </svg>

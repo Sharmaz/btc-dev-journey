@@ -22,15 +22,41 @@ sudo apt-get install -y \
   net-tools zlib1g-dev libsodium-dev gettext
 ```
 
-### Instalación de Bitcoin Core
+### ¿Por qué Bitcoin Knots?
 
-Para instalar `Bitcoin Core` lo más sencillo es usando snap.
+`Bitcoin Knots` es un fork de Bitcoin Core mantenido por Luke Dashjr. Es totalmente compatible — mismos `bitcoind`, `bitcoin-cli` y `bitcoin.conf` — así que el resto de esta guía aplica para ambos clientes.
 
-:::info
-Tambien existe la opción de compilar Bitcoin Core desde el código fuente.
+:::info Por qué recomendamos Bitcoin Knots sobre Bitcoin Core
+- **Mayor control y personalización** — expone opciones de configuración adicionales que no están disponibles en Core.
+- **Filtros de Spam (Límite de Datos)** — permite configurar `datacarriersize` para filtrar transacciones no financieras que saturan la blockchain.
+- **Mayor Descentralización** — políticas predeterminadas más estrictas alineadas con el diseño original de Bitcoin.
+- **Políticas de Transmisión** — control más fino sobre qué transacciones tu nodo retransmite y acepta en el mempool.
 :::
 
-```bash title="Bitcoin core"
+### Instalación de Bitcoin Knots
+
+Bitcoin Knots no está disponible como snap, así que lo instalamos desde el binario oficial en [bitcoinknots.org](https://bitcoinknots.org/):
+
+```bash title="Instalación de Bitcoin Knots"
+# Consulta bitcoinknots.org para la versión más reciente y sustituye el nombre del archivo
+wget https://bitcoinknots.org/files/27.x/27.1.knots20241119/bitcoin-27.1.knots20241119-x86_64-linux-gnu.tar.gz
+
+tar -xzf bitcoin-27.1.knots20241119-x86_64-linux-gnu.tar.gz
+
+sudo install -m 0755 -o root -g root -t /usr/local/bin \
+  bitcoin-27.1.knots20241119/bin/bitcoind \
+  bitcoin-27.1.knots20241119/bin/bitcoin-cli
+```
+
+### Alternativa: Bitcoin Core
+
+Si prefieres el cliente upstream más conservador, instálalo via snap:
+
+:::info
+También existe la opción de compilar Bitcoin Core desde el código fuente.
+:::
+
+```bash title="Instalación de Bitcoin Core"
 sudo snap install bitcoin-core
 # Creamos un link simbólico de bitcoind y bitcoin-cli desde el snap.
 sudo ln -s /snap/bitcoin-core/current/bin/bitcoin{d,-cli} /usr/local/bin/

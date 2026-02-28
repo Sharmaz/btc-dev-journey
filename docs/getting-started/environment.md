@@ -16,7 +16,7 @@ Bitcoin CLI is a command line interface allowing us to interact with the blockch
 
 ```mermaid
 flowchart LR
-  A((Bitcoin Core)) --> B[bitcoin-cli] --> C[Data in JSON] --> D[Application]
+  A((Bitcoin Knots/Core)) --> B[bitcoin-cli] --> C[Data in JSON] --> D[Application]
 ```
 
 ### Lightning Network Apps
@@ -24,5 +24,5 @@ flowchart LR
 We also have Lightning CLI.
 ```mermaid
 flowchart LR
-  A((Bitcoin Core)) --> B((Lightning)) --> C[lightning-cli] --> D[Data in JSON] --> F[Application]
+  A((Bitcoin Knots/Core)) --> B((Lightning)) --> C[lightning-cli] --> D[Data in JSON] --> F[Application]
 ```

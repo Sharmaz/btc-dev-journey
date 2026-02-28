@@ -42,13 +42,42 @@ export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 ```
 
-### Installing Bitcoin Core
+### Why Bitcoin Knots?
 
-The easiest way to install `Bitcoin Core` is downloading it from [bitcoincore.org](https://bitcoincore.org/en/download/), decompressing it and dragging it to our applications folder.
+`Bitcoin Knots` is a fork of Bitcoin Core maintained by Luke Dashjr. It is fully compatible — same `bitcoind`, `bitcoin-cli`, and `bitcoin.conf` — so the rest of this guide applies to both clients.
+
+:::info Why we recommend Bitcoin Knots over Bitcoin Core
+- **More control and customization** — exposes additional configuration options not available in Core.
+- **Spam filters (data limit)** — allows setting `datacarriersize` to filter non-financial transactions that bloat the blockchain.
+- **Greater decentralization** — stricter default policies that align with Bitcoin's original design.
+- **Transmission policies** — finer control over what transactions your node relays and accepts into the mempool.
+:::
+
+### Installing Bitcoin Knots
+
+Download it from [bitcoinknots.org](https://bitcoinknots.org/), decompress it and drag it to your applications folder. Grant permissions in `System Settings` > `Privacy & Security` the same way as Bitcoin Core.
+
+For the CLI tools, since there is no Homebrew formula for Bitcoin Knots, copy the binaries manually:
+
+```bash
+# Replace X.Y.Z with the downloaded version
+sudo cp ~/Downloads/bitcoin-X.Y.Z/bin/bitcoind /usr/local/bin/
+sudo cp ~/Downloads/bitcoin-X.Y.Z/bin/bitcoin-cli /usr/local/bin/
+```
+
+### Alternative: Bitcoin Core
+
+If you prefer the most conservative upstream client, download it from [bitcoincore.org](https://bitcoincore.org/en/download/), decompress it and drag it to your applications folder.
 
 :::info
 There is also the option to compile Bitcoin Core from the source code.
 :::
+
+After granting permissions in `System Settings` > `Privacy & Security`, install the CLI tools via Homebrew:
+
+```bash
+brew install bitcoin
+```
 
 To be able to run it, besides opening it from applications we need to grant it permissions in `System Settings` > `Privacy & Security`. Scroll down and click the `Open Anyway` button.
 

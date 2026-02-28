@@ -23,14 +23,41 @@ sudo apt-get install -y \
   net-tools zlib1g-dev libsodium-dev gettext
 ```
 
-### Installing Bitcoin Core
+### Why Bitcoin Knots?
 
-The easiest way to install `Bitcoin Core` is using snap.
-:::info
-There is also the option to compile bitcoin core from the source code.
+`Bitcoin Knots` is a fork of Bitcoin Core maintained by Luke Dashjr. It is fully compatible — same `bitcoind`, `bitcoin-cli`, and `bitcoin.conf` — so the rest of this guide applies to both clients.
+
+:::info Why we recommend Bitcoin Knots over Bitcoin Core
+- **More control and customization** — exposes additional configuration options not available in Core.
+- **Spam filters (data limit)** — allows setting `datacarriersize` to filter non-financial transactions that bloat the blockchain.
+- **Greater decentralization** — stricter default policies that align with Bitcoin's original design.
+- **Transmission policies** — finer control over what transactions your node relays and accepts into the mempool.
 :::
 
-```bash title="Bitcoin core installation"
+### Installing Bitcoin Knots
+
+Bitcoin Knots is not available as a snap, so we install it from the binary release at [bitcoinknots.org](https://bitcoinknots.org/):
+
+```bash title="Bitcoin Knots installation"
+# Check bitcoinknots.org for the latest version and replace the filename accordingly
+wget https://bitcoinknots.org/files/27.x/27.1.knots20241119/bitcoin-27.1.knots20241119-x86_64-linux-gnu.tar.gz
+
+tar -xzf bitcoin-27.1.knots20241119-x86_64-linux-gnu.tar.gz
+
+sudo install -m 0755 -o root -g root -t /usr/local/bin \
+  bitcoin-27.1.knots20241119/bin/bitcoind \
+  bitcoin-27.1.knots20241119/bin/bitcoin-cli
+```
+
+### Alternative: Bitcoin Core
+
+If you prefer the most conservative upstream client, install it via snap:
+
+:::info
+There is also the option to compile Bitcoin Core from the source code.
+:::
+
+```bash title="Bitcoin Core installation"
 sudo snap install bitcoin-core
 # Create a symbolic link to bitcoind and bitcoin-cli from the snap
 sudo ln -s /snap/bitcoin-core/current/bin/bitcoin{d,-cli} /usr/local/bin/

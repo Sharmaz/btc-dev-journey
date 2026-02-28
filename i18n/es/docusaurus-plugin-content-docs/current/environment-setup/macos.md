@@ -42,13 +42,42 @@ export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 ```
 
-### Instalación de Bitcoin Core
+### ¿Por qué Bitcoin Knots?
 
-La manera más sencilla es descargarnos Bitcoin Core de [bitcoincore.org](https://bitcoincore.org/en/download/), lo descomprimimos y lo arrastramos a nuestra carpeta de aplicaciones.
+`Bitcoin Knots` es un fork de Bitcoin Core mantenido por Luke Dashjr. Es totalmente compatible — mismos `bitcoind`, `bitcoin-cli` y `bitcoin.conf` — así que el resto de esta guía aplica para ambos clientes.
+
+:::info Por qué recomendamos Bitcoin Knots sobre Bitcoin Core
+- **Mayor control y personalización** — expone opciones de configuración adicionales que no están disponibles en Core.
+- **Filtros de Spam (Límite de Datos)** — permite configurar `datacarriersize` para filtrar transacciones no financieras que saturan la blockchain.
+- **Mayor Descentralización** — políticas predeterminadas más estrictas alineadas con el diseño original de Bitcoin.
+- **Políticas de Transmisión** — control más fino sobre qué transacciones tu nodo retransmite y acepta en el mempool.
+:::
+
+### Instalación de Bitcoin Knots
+
+Descárgalo desde [bitcoinknots.org](https://bitcoinknots.org/), descomprimelo y arrástralo a tu carpeta de aplicaciones. Otorga permisos en `System Settings` > `Privacy & Security` de la misma forma que con Bitcoin Core.
+
+Para las herramientas de CLI, como no existe fórmula de Homebrew para Bitcoin Knots, copia los binarios manualmente:
+
+```bash
+# Sustituye X.Y.Z por la versión descargada
+sudo cp ~/Downloads/bitcoin-X.Y.Z/bin/bitcoind /usr/local/bin/
+sudo cp ~/Downloads/bitcoin-X.Y.Z/bin/bitcoin-cli /usr/local/bin/
+```
+
+### Alternativa: Bitcoin Core
+
+Si prefieres el cliente upstream más conservador, descárgalo desde [bitcoincore.org](https://bitcoincore.org/en/download/), descomprimelo y arrástralo a tu carpeta de aplicaciones.
 
 :::info
 También existe la opción de compilar Bitcoin Core desde el código fuente.
 :::
+
+Tras otorgar permisos en `System Settings` > `Privacy & Security`, instala las herramientas CLI via Homebrew:
+
+```bash
+brew install bitcoin
+```
 
 Para poder correrlo, ademas de abrirlo desde aplicaciones hay a que otorgarle permisos en `System Settings` > `Privacy & Security`. Nos movemos hasta abajo y hay que darle al botón `Open Anyway`.
 

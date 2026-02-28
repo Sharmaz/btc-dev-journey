@@ -1,12 +1,18 @@
 ---
 sidebar_position: 5
 title: Web3 en Bitcoin
-description: Explorando capacidades de contratos inteligentes en Bitcoin - DLCs, Stacks, RGB y más
+description: Una visión general de los intentos de programabilidad en Bitcoin — incluyendo protocolos considerados spam — presentado para tomar conciencia, no como respaldo.
 ---
 
 # Web3 en Bitcoin
 
-Bitcoin a menudo se ve como "solo dinero", pero hay un ecosistema creciente de contratos inteligentes y funcionalidad programable construyéndose sobre él. A diferencia del enfoque de Ethereum, los contratos inteligentes de Bitcoin tienden a enfatizar seguridad, minimalismo y computación off-chain.
+:::danger No Recomendado
+Protocolos como Ordinals, BRC-20, Runes y Stamps insertan datos arbitrarios en el espacio de bloques de Bitcoin. Esto es ampliamente considerado **spam**: infla la blockchain, eleva las comisiones para todos y socava el propósito de Bitcoin como dinero sólido y resistente a la censura. El estándar Bitcoin es claro — Bitcoin es dinero, no una capa de datos de propósito general.
+
+Esta página se incluye únicamente para **tomar conciencia**. Conocer estos protocolos no significa respaldarlos.
+:::
+
+Bitcoin está diseñado como un sistema monetario — una forma descentralizada y resistente a la censura de dinero sólido. Algunos desarrolladores han construido capas de programabilidad sobre Bitcoin, desde protocolos legítimos de contratos off-chain (DLCs, RGB) que respetan el diseño de Bitcoin, hasta esquemas de inscripción de datos (Ordinals, BRC-20) que abusan del espacio de bloques y son rechazados por una parte significativa de la comunidad Bitcoin.
 
 ## Discreet Log Contracts (DLCs)
 
@@ -48,15 +54,16 @@ Los DLCs permiten pagos condicionales basados en eventos del mundo real (contrat
 - **Privacidad** — Los detalles del contrato no son visibles en la blockchain
 - **Activos** — Emitir tokens fungibles, NFTs y más
 
-## Ordinals e Inscriptions
+## Ordinals, Inscriptions y BRC-20
 
-Ordinals asigna un número de serie a satoshis individuales, habilitando funcionalidad similar a NFTs:
+:::warning Spam — No Recomendado
+Ordinals, BRC-20, Runes y Stamps explotan el witness data de Bitcoin para insertar contenido arbitrario (imágenes, texto, datos de tokens) on-chain. Esto eleva las comisiones de transacción, infla el conjunto UTXO y desplaza transacciones financieras legítimas. No tienen ningún propósito monetario y son ampliamente considerados un ataque al espacio de bloques de Bitcoin.
+:::
 
-- **Teoría ordinal** — Rastrea sats individuales a través de transacciones
-- **Inscriptions** — Insertar datos (imágenes, texto) en witness data
-- **BRC-20** — Estándar de tokens fungibles usando inscriptions
-
-Esto es controversial en la comunidad Bitcoin — algunos lo ven como innovación, otros como bloat de la blockchain.
+- **Teoría ordinal** — Asigna números de serie a satoshis individuales para simular propiedad estilo NFT
+- **Inscriptions** — Incrusta datos arbitrarios (imágenes, texto, código) en witness data
+- **BRC-20** — Un experimento de token fungible construido sobre inscriptions
+- **Runes** — Un protocolo de tokens más reciente que también usa el espacio de bloques de Bitcoin para datos no monetarios
 
 ## Otros Enfoques
 

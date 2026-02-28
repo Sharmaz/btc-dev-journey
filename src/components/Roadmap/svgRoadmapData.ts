@@ -4,6 +4,7 @@ export type NodeData = {
   description: string;
   descriptionEs: string;
   links: { label: string; labelEs: string; href: string }[];
+  notRecommended?: boolean;
 };
 
 export const NODE_DATA: Record<string, NodeData> = {
@@ -251,11 +252,12 @@ export const NODE_DATA: Record<string, NodeData> = {
 
   'web3-bitcoin': {
     title: 'Web3 on Bitcoin',
-    description: "Bitcoin's programmability layer: Ordinals, BRC-20 tokens, Runes, and Stamps. Building apps that leverage Bitcoin's block space for data inscription and token protocols.",
-    descriptionEs: 'La capa de programabilidad de Bitcoin: Ordinals, tokens BRC-20, Runes y Stamps. Construcción de apps que aprovechan el espacio de bloques de Bitcoin para inscripción de datos y protocolos de tokens.',
+    description: "Ordinals, BRC-20 tokens, Runes, and Stamps embed arbitrary data in Bitcoin block space. These protocols are widely considered spam — they bloat the blockchain, raise fees, and undermine Bitcoin's purpose as sound, censorship-resistant money. The Bitcoin standard is clear: Bitcoin is money, not a general-purpose data layer. This topic is included for awareness, not endorsement.",
+    descriptionEs: 'Ordinals, tokens BRC-20, Runes y Stamps insertan datos arbitrarios en el espacio de bloques de Bitcoin. Estos protocolos son ampliamente considerados spam: inflan la blockchain, elevan las comisiones y socavan el propósito de Bitcoin como dinero sólido y resistente a la censura. El estándar Bitcoin es claro: Bitcoin es dinero, no una capa de almacenamiento de datos de propósito general. Este tema se incluye para tomar conciencia, no como respaldo.',
     links: [
       { label: 'Web3 on Bitcoin', labelEs: 'Web3 en Bitcoin', href: '/docs/tracks/application-developer/web3-bitcoin' },
     ],
+    notRecommended: true,
   },
 
   'advanced-protocols': {

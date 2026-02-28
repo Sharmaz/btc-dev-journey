@@ -1,12 +1,18 @@
 ---
 sidebar_position: 5
 title: Web3 on Bitcoin
-description: Exploring smart contract capabilities on Bitcoin - DLCs, Stacks, RGB, and more
+description: An overview of programmability attempts on Bitcoin — including protocols that are widely considered spam — covered for awareness, not endorsement.
 ---
 
 # Web3 on Bitcoin
 
-Bitcoin is often seen as "just money," but there's a growing ecosystem of smart contract and programmable functionality being built on top of it. Unlike Ethereum's approach, Bitcoin's smart contracts tend to emphasize security, minimalism, and off-chain computation.
+:::danger Not Recommended
+Protocols like Ordinals, BRC-20, Runes, and Stamps embed arbitrary data in Bitcoin block space. This is widely considered **spam**: it bloats the blockchain, raises fees for everyone, and undermines Bitcoin's purpose as sound, censorship-resistant money. The Bitcoin standard is clear — Bitcoin is money, not a general-purpose data layer.
+
+This page is included for **awareness only**. Understanding these protocols does not mean endorsing them.
+:::
+
+Bitcoin is designed as a monetary system — a decentralized, censorship-resistant form of sound money. Some developers have built programmability layers on top of Bitcoin, ranging from legitimate off-chain contract protocols (DLCs, RGB) that respect Bitcoin's design, to data-inscription schemes (Ordinals, BRC-20) that abuse block space and are opposed by a significant portion of the Bitcoin community.
 
 ## Discreet Log Contracts (DLCs)
 
@@ -48,15 +54,16 @@ DLCs enable conditional payments based on real-world events (oracle-based contra
 - **Privacy** — Contract details are not visible on the blockchain
 - **Assets** — Issue fungible tokens, NFTs, and more
 
-## Ordinals & Inscriptions
+## Ordinals, Inscriptions & BRC-20
 
-Ordinals assign a serial number to individual satoshis, enabling NFT-like functionality:
+:::warning Spam — Not Recommended
+Ordinals, BRC-20, Runes, and Stamps exploit Bitcoin's witness data to embed arbitrary content (images, text, token data) on-chain. This drives up transaction fees, bloats the UTXO set, and crowds out legitimate financial transactions. They serve no monetary purpose and are broadly considered an attack on Bitcoin's block space.
+:::
 
-- **Ordinal theory** — Tracks individual sats through transactions
-- **Inscriptions** — Embed data (images, text) into witness data
-- **BRC-20** — Fungible token standard using inscriptions
-
-This is controversial in the Bitcoin community — some see it as innovation, others as blockchain bloat.
+- **Ordinal theory** — Assigns serial numbers to individual satoshis to simulate NFT-like ownership
+- **Inscriptions** — Embeds arbitrary data (images, text, code) into witness data
+- **BRC-20** — A fungible token experiment built on inscriptions
+- **Runes** — A newer token protocol also using Bitcoin block space for non-monetary data
 
 ## Other Approaches
 
